@@ -1,0 +1,11 @@
+h1.center {
+    text-align: center;
+}
+
+center {
+    text-align: center;
+}
+
+.btn-danger, .btn-success {
+    width: 100%;
+}
