@@ -20,7 +20,7 @@
                     <div class="input-group">
                            <ul class= "list-group mt-3"  id="listaEstudiante"></ul> 
                     </div>   
-                </div>
+                </div> 
                 <div class="col-6">
                   <h2>Ingreso de Datos</h2>
                   <form id="formulario" onsubmit="event.preventDefault()">
@@ -29,8 +29,16 @@
                           <input type="text" class="form-control" id="inputName" placeholder="Nombre" onblur = "validarNombre(this)">
                         </div>
                         <div class="form-group col-md-6">
-                          <input type="number" class="form-control" id="inputDni" placeholder="DNI" 
-                          onblur = "validarDNI(this)" >
+                          <input type="text" class="form-control" id="inputLastName" placeholder="Apellido" onblur = "validarApellido(this)">
+                        </div>
+                      </div>
+                      <div class="form-row" >
+                        <div class="form-group col-md-6">
+                          <input type="number" class="form-control" id="inputDni" placeholder="DNI" onblur = "validarDNI(this)" >
+                        </div>
+                        <div id="errorDni"></div>
+                        <div class="form-group col-md-6">
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese Email" onblur = "validarEmail(this)" >
                         </div>
                       </div>
                       <div class="form-group">
@@ -38,10 +46,10 @@
                       </div>
                       <div class="form-row">
                         <div class="form-group col-md-6">
-                          <input type="text" class="form-control" id="searchDni" placeholder="DNI">
+                          <input type="text" class="form-control" id="dniEliminar" placeholder="DNI">
                         </div>
                         <div class="form-group col-md-6">
-                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                            <button type="submit" class="btn btn-danger" onclick="eliminarAlumno(this)">Eliminar</button>
                         </div>
                       </div>
                       <div class="form-row">
@@ -49,8 +57,10 @@
                             <input type="text" class="form-control" id="searchName" placeholder="Nombre">
                           </div>
                           <div class="form-group col-md-6">
-                              <button type="submit" class="btn btn-success">Buscar Alumno</button>
+                              <button type="submit" class="btn btn-success" onclick="buscarAlumno(this)">Buscar Alumno</button>
+      
                           </div>
+                          <div class="form-group col-md-6" id="resultadoBusqueda"></div>
                         </div>
                     </form>
                 </div>
